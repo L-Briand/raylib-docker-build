@@ -6,7 +6,7 @@ DOCKER_IMG="raylib/build-android"
 
 mkdir -p "$OUTPUT_PATH"
 
-if [ -z "$(docker images -q raylib/build-$ARCH 2> /dev/null)" ]; then
+if [ -z "$(docker images -q $DOCKER_IMG 2> /dev/null)" ]; then
   docker build -t "$DOCKER_IMG" -f "build/android/build-android.dockerfile" .
 fi
 
